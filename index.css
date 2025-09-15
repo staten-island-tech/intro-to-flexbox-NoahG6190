@@ -1,0 +1,25 @@
+body{
+    background-color: crimson;
+    text-align: center;
+    margin-top: 100px;
+    margin: 80px;
+    font-size: 2.5rem;
+    color: white;
+    padding: 80px;
+}
+
+h1{
+    font-size: 5rem;
+    color: white;
+}
+.card{
+    background-color: blue;
+    width: 10rem;
+    length: 10rem;
+    background-color: purple;
+}
+.container{
+    background-color: yellow;
+    width: 400px;
+    length: 500px;
+}
