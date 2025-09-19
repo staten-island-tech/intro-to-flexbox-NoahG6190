@@ -17,11 +17,15 @@ h1 {
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: black;
   font-family: Lexend Tera, sans-serif;
   font-weight: bold;
   color: #495057;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 150px;
+  align-content: center;
 }
 .card {
   height: 300px;
@@ -53,4 +57,7 @@ h3 {
   flex: row-wrap;
   flex-wrap: wrap;
   align-content: space-evenly;
+}
+img {
+  align-self: center;
 }
