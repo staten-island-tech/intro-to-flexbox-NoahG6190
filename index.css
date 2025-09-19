@@ -39,6 +39,8 @@ h3 {
   font-size: 2rem;
   font-weight: bold;
   color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
   @media screen {
     max-width: 500px;
   }
