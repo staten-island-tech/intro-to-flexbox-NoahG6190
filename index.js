@@ -1,62 +1,67 @@
 const sneakers = [
   {
     name: "YU-GI-OH! AIR MAX MUSCLES 95 QS 'JOEYY'",
-    display: "Screenshot_17-9-2025_103626_www.flightclub.com.jpeg",
+    display: "YU GIO OH.jpeg",
     price: "$199.99",
   },
   {
     name: "CONCEPTS X DUNK LOW SB 'ORANGE LOBSTER'",
-    display: "Screenshot 2025-09-18 103748.png",
+    display: "ORANGE LOBSTER.png",
     price: "$499.99",
   },
   {
     name: "JORDAN 5 RETRO 'FIRE RED' 2025",
-    display: "Screenshot 2025-09-17 105516.png",
+    display: "JORDAN 4 23.png",
     price: "$199.99",
   },
   {
     name: "SUPREME X DUNK LOW SB 'BLACK'",
-    display: "Screenshot_17-9-2025_104834_www.flightclub.com.jpeg",
+    display: "supreme.jpeg",
     price: "$299.99",
   },
   {
     name: "TRAVIS SCOTT X JORDAN 1 RETRO LOW OG SP'BLACK PHANTOM'",
-    display: "Screenshot 2025-09-17 105752.png",
+    display: "BLACK PHANTOM.png",
     price: "$999.99",
   },
   {
     name: "JORDAN 4 RETRO 'BRED REIMAGINED'",
-    display: "Screenshot 2025-09-17 105841.png",
+    display: "JORDAN 4 BLACK.png",
     price: "$199.99",
   },
   {
     name: "THE POWERPUFF GIRLS X BUNK LOW PRO SB QS 'BUTTERCUP'",
-    display: "Screenshot_17-9-2025_105042_www.flightclub.com.jpeg",
+    display: "powerpuff.jpeg",
     price: "$399.99",
   },
   {
     name: "AIR FORCE 1'07 'TRIPLE WHITE'",
-    display: "Screenshot 2025-09-17 105815.png",
+    display: "AIR FORCE ONE.png",
     price: "$89.99",
   },
   {
     name: " ZOOM KOBE 5 PROTRO 'X-RAY'",
-    display: "Screenshot 2025-09-18 104205.png",
+    display: "XRAY.png",
     price: "$499.99",
   },
   {
     name: "CACTUS PLANT FLEA MARKET X AIRFORCE 1 LOW PREMIUM",
-    display: "Screenshot 2025-09-18 104352.png",
+    display: "PURPLE.png",
     price: "$199.99",
   },
   {
     name: "OFF-WHITE X AIR FORCE 1 LOW 'LEMONADE'",
-    display: "Screenshot 2025-09-18 104608.png",
+    display: "OFF-WHITE YELLOW.png",
     price: "$199.99",
   },
   {
     name: "AUNT PEARL X DUNK LOW SB 'AUNT PEARL'",
-    display: "Screenshot 2025-09-18 105747.png",
+    display: "AUNT MAY.png",
+    price: "$199.99",
+  },
+  {
+    name: "ZOOM LEBRON NXXT GENISUS EP 'IRIDESCENT PINK'",
+    display: "LEBRON PINK.png",
     price: "$199.99",
   },
 ];
@@ -82,3 +87,13 @@ function inject(sneakers) {
 sneakers.forEach((sneaker) => {
   inject(sneaker);
 });
+
+functioncartCounter();
+{
+  count++;
+  document.querySelector("h5").textContent = `Add to Cart (${count})`;
+}
+const cart = [];
+<button class="btn">Add to Cart</button>;
+
+const btn = document.querySelector(".btn");
