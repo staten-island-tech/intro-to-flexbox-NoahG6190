@@ -91,7 +91,7 @@ sneakers.forEach((sneaker) => {
 functioncartCounter();
 {
   count++;
-  document.querySelector("h5").textContent = `Add to Cart (${count})`;
+  document.querySelector("h5,,").textContent = `Add to Cart (${count})`;
 }
 const cart = [];
 <button class="btn">Add to Cart</button>;
