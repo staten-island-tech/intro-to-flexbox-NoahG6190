@@ -84,16 +84,9 @@ function inject(sneakers) {
   );
 }
 
-sneakers.forEach((sneaker) => {
-  inject(sneaker);
+sneakers.forEach((sneakers) => {
+  inject(sneakers);
 });
 
-functioncartCounter();
-{
-  count++;
-  document.querySelector("h5,,").textContent = `Add to Cart (${count})`;
-}
-const cart = [];
-<button class="btn">Add to Cart</button>;
-
-const btn = document.querySelector(".btn");
+document.querySelector(".btns");
+cart.btn.addEventListener("click", function () {
