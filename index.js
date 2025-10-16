@@ -20,7 +20,7 @@ const sneakers = [
     price: "$299.99",
   },
   {
-    name: "TRAVIS SCOTT X JORDAN 1 RETRO LOW OG SP'BLACK PHANTOM'",
+    name: "TRAVIS SCOTT X JORDAN 1 RETRO LOW OG SP 'BLACK PHANTOM'",
     display: "BLACK PHANTOM.png",
     price: "$999.99",
   },
@@ -30,7 +30,7 @@ const sneakers = [
     price: "$199.99",
   },
   {
-    name: "THE POWERPUFF GIRLS X BUNK LOW PRO SB QS 'BUTTERCUP'",
+    name: "THE POWERPUFF GIRLS X
     display: "powerpuff.jpeg",
     price: "$399.99",
   },
@@ -80,13 +80,22 @@ function inject(sneakers) {
 <img src="${sneakers.display}">
 <h3>${sneakers.name}</h3>
 <h4>${sneakers.price}</h4>
+
 </div>`
   );
+}
+document.addEventListener ('click',(e)=> {
+  if(e.target.classList.contains('add to-cart')){
+{const card =e.target.closest('.card');
+const name = card.querySelector('h3').textContent;
+const price = card.querySelector('h4').textContent;
+const cartItem = document.createElement('li');
+cartItem.textContent = `${name} - ${price}`;
+document.getElementById('cart-items').appendChild(cartItem);
+}
+};
 }
 
 sneakers.forEach((sneakers) => {
   inject(sneakers);
 });
-
-document.querySelector(".btns");
-cart.btn.addEventListener("click", function () {
