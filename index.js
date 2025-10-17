@@ -30,7 +30,7 @@ const sneakers = [
     price: "$199.99",
   },
   {
-    name: "THE POWERPUFF GIRLS X
+    name: "THE POWERPUFF GIRLS X, DUNK LOW PRO SB QS 'BUTTERCUP'",
     display: "powerpuff.jpeg",
     price: "$399.99",
   },
@@ -66,36 +66,24 @@ const sneakers = [
   },
 ];
 
-const DOMSelectors = {
-  name: document.getElementById("name"),
-  display: document.getElementById("display"),
-  price: document.getElementById("price"),
-};
-
-function inject(sneakers) {
-  const sneakerContainer = document.querySelector(".container");
-  sneakerContainer.insertAdjacentHTML(
-    "afterbegin",
-    `<div class="card">
-<img src="${sneakers.display}">
-<h3>${sneakers.name}</h3>
-<h4>${sneakers.price}</h4>
+const sneakerContainer = document.querySelector(".sneakers");
+function inject(sneaker, index) {
+  sneakers.insertAdjacentHTML(
+    "beforeend",
+    `<div class="card"></div>
+<img src="${sneaker.display}">
+<h3>${sneaker.name}</h3>
+<h4>${sneaker.price}</h4>
+<button class="cart-button data-index="${index}"">Add to Cart</button>
 
 </div>`
   );
 }
-document.addEventListener ('click',(e)=> {
-  if(e.target.classList.contains('add to-cart')){
-{const card =e.target.closest('.card');
-const name = card.querySelector('h3').textContent;
-const price = card.querySelector('h4').textContent;
-const cartItem = document.createElement('li');
-cartItem.textContent = `${name} - ${price}`;
-document.getElementById('cart-items').appendChild(cartItem);
-}
-};
-}
-
-sneakers.forEach((sneakers) => {
-  inject(sneakers);
-});
+sneakers.forEach((sneaker, index) => inject(sneakers));
+document.querySelectorAll(".cart-button").forEach((button) =>
+  button.addEventListener("click", (e) => {
+    const index = e.target.getAttribute("data-index");
+    const selectedSneaker = sneakers[index];
+    alert(`Added to cart: ${selectedSneaker.name} - ${selectedSneaker.price}`);
+  })
+);
