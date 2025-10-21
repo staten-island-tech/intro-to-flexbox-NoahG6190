@@ -66,24 +66,18 @@ const sneakers = [
   },
 ];
 
-const sneakerContainer = document.querySelector(".sneakers");
-function inject(sneaker, index) {
-  sneakers.insertAdjacentHTML(
+const sneakerContainer = document.getElementById("sneakercontainer");
+function injectCard(sneaker) {
+  sneakerContainer.insertAdjacentHTML(
     "beforeend",
-    `<div class="card"></div>
-<img src="${sneaker.display}">
+    `
+    <div class="card">
+<img src="${sneaker.display}" alt="${sneaker.name}">
 <h3>${sneaker.name}</h3>
 <h4>${sneaker.price}</h4>
-<button class="cart-button data-index="${index}"">Add to Cart</button>
+<button class="cart-button">Add to Cart</button>
 
 </div>`
   );
 }
-sneakers.forEach((sneaker, index) => inject(sneakers));
-document.querySelectorAll(".cart-button").forEach((button) =>
-  button.addEventListener("click", (e) => {
-    const index = e.target.getAttribute("data-index");
-    const selectedSneaker = sneakers[index];
-    alert(`Added to cart: ${selectedSneaker.name} - ${selectedSneaker.price}`);
-  })
-);
+sneakers.forEach(injectCard);
