@@ -67,6 +67,11 @@ const sneakers = [
 ];
 
 const sneakerContainer = document.getElementById("sneakercontainer");
+const cartContainer = document.getElementById("cartcontainer");
+const totalPriceEl = document.getElementById("totalprice");
+
+let cartItems = [];
+
 function injectCard(sneaker) {
   sneakerContainer.insertAdjacentHTML(
     "beforeend",
@@ -81,3 +86,38 @@ function injectCard(sneaker) {
   );
 }
 sneakers.forEach(injectCard);
+
+function addToCart(event) {
+  if (event.target.classList.contains("cart-button")) {
+    const sneakerCard = event.target.closest(".card");
+    const sneakerName = sneakerCard.querySelector("h3").textContent;
+    const sneakers = sneakers.find((s) => s.name === sneakerName);
+  }
+}
+if (sneaker) {
+  cartItems.push(sneaker);
+  rendercart();
+  alert(`${sneakerName} has been added to your cart!`);
+}
+function rendercart() {
+  cartContainer.innerHTML = "";
+  cartItems.forEach((sneaker) => {
+    cartContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="card">
+<img src="${sneaker.display}" alt="${sneaker.name}">
+<h3>${sneaker.name}</h3>
+<h4>${sneaker.price}</h4>
+</div>`
+    );
+  });
+
+  const total = cartItems.reduce((sum, sneaker) => {
+    const price = parseFloat(sneaker.price.replace("$", ""));
+    return sum + price;
+  }, 0);
+  totalPriceEl.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+sneakerContainer.addEventListener("click", addToCart);
