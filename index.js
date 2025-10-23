@@ -71,6 +71,7 @@ const cartContainer = document.getElementById("cartcontainer");
 const totalPriceEl = document.getElementById("totalprice");
 
 let cartItems = [];
+let filteredSneakers = sneakers;
 
 function injectCard(sneaker) {
   sneakerContainer.insertAdjacentHTML(
@@ -91,13 +92,14 @@ function addToCart(event) {
   if (event.target.classList.contains("cart-button")) {
     const sneakerCard = event.target.closest(".card");
     const sneakerName = sneakerCard.querySelector("h3").textContent;
-    const sneakers = sneakers.find((s) => s.name === sneakerName);
+    const sneaker = sneakers.find((s) => s.name === sneakerName);
+
+    if (sneaker) {
+      cartItems.push(sneaker);
+      rendercart();
+      alert(`${sneakerName} has been added to your cart!`);
+    }
   }
-}
-if (sneaker) {
-  cartItems.push(sneaker);
-  rendercart();
-  alert(`${sneakerName} has been added to your cart!`);
 }
 function rendercart() {
   cartContainer.innerHTML = "";
@@ -105,19 +107,44 @@ function rendercart() {
     cartContainer.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="card">
-<img src="${sneaker.display}" alt="${sneaker.name}">
+      <div class="cart-item">
 <h3>${sneaker.name}</h3>
 <h4>${sneaker.price}</h4>
+<button class="remove-button">Remove</button>
 </div>`
     );
   });
 
   const total = cartItems.reduce((sum, sneaker) => {
-    const price = parseFloat(sneaker.price.replace("$", ""));
+    const price = Number(sneaker.price.replace("$", ""));
     return sum + price;
   }, 0);
   totalPriceEl.textContent = `Total: $${total.toFixed(2)}`;
 }
 
 sneakerContainer.addEventListener("click", addToCart);
+
+cartContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-button")) {
+    const name = event.target.parentElement.querySelector("h3").textContent;
+    cartItems = cartItems.filter((sneaker) => sneaker.name !== name);
+    rendercart();
+  }
+});
+
+function renderSneakers(list) {
+  sneakerContainer.innerHTML = "";
+  list.forEach(injectCard);
+}
+renderSneakers(filteredsneakers);
+
+document.getElementById("filter-jordans").addEventListener("click", () => {
+  filteredSneakers = sneakers.filter((sneaker) =>
+    sneaker.name.toLowerCase().includes("jordan")
+  );
+  renderSneakers(filteredSneakers);
+});
+document.getElementById("filter-others").addEventListener("click", () => {
+  filteredSneakers = sneakers;
+  renderSneakers(filteredSneakers);
+});
