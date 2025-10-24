@@ -74,3 +74,13 @@ h4 {
 img {
   align-self: center;
 }
+
+button {
+  background-color: #495057;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  font-family: Lexend Tera, sans-serif;
+}

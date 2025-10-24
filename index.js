@@ -97,7 +97,6 @@ function addToCart(event) {
     if (sneaker) {
       cartItems.push(sneaker);
       rendercart();
-      alert(`${sneakerName} has been added to your cart!`);
     }
   }
 }
@@ -136,7 +135,8 @@ function renderSneakers(list) {
   sneakerContainer.innerHTML = "";
   list.forEach(injectCard);
 }
-renderSneakers(filteredsneakers);
+
+renderSneakers(filteredSneakers);
 
 document.getElementById("filter-jordans").addEventListener("click", () => {
   filteredSneakers = sneakers.filter((sneaker) =>
@@ -144,6 +144,7 @@ document.getElementById("filter-jordans").addEventListener("click", () => {
   );
   renderSneakers(filteredSneakers);
 });
+
 document.getElementById("filter-others").addEventListener("click", () => {
   filteredSneakers = sneakers;
   renderSneakers(filteredSneakers);
