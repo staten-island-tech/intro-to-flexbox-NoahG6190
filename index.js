@@ -6,7 +6,7 @@ const sneakers = [
   },
   {
     name: "CONCEPTS X DUNK LOW SB 'ORANGE LOBSTER'",
-    display: "ORANGE LOBSTER.png",
+    display: "ORANGE LOBSTERS.png",
     price: "$499.99",
   },
   {
@@ -26,7 +26,7 @@ const sneakers = [
   },
   {
     name: "JORDAN 4 RETRO 'BRED REIMAGINED'",
-    display: "JORDAN 4 BLACK.png",
+    display: "JORDAN 4 REIMAGINED.png",
     price: "$199.99",
   },
   {
@@ -46,7 +46,7 @@ const sneakers = [
   },
   {
     name: "CACTUS PLANT FLEA MARKET X AIRFORCE 1 LOW PREMIUM",
-    display: "PURPLE.png",
+    display: "purple af1.png",
     price: "$199.99",
   },
   {
@@ -63,6 +63,26 @@ const sneakers = [
     name: "ZOOM LEBRON NXXT GENISUS EP 'IRIDESCENT PINK'",
     display: "LEBRON PINK.png",
     price: "$199.99",
+  },
+  {
+    name: "JORDAN 4 RETRO 'RARE AIR-WHITE LETTERING'",
+    display: "jordan 4 rare air.png",
+    price: "$249.99",
+  },
+  {
+    name: "JORDAN 4 RETRO 'WHITE THUNDER'",
+    display: "jordan 4 white thunder.png",
+    price: "$249.99",
+  },
+  {
+    name: "JORDAN 1 RETRO HIGH OG 'CHICAGO LOST&FOUND'",
+    display: "jordan 1 lost and found.png",
+    price: "$399.99",
+  },
+  {
+    name: "TRAVIS SCOTT X JORDAN 1 RETRO HIGH OG 'MOCHA'",
+    display: "travis scott mocha.png",
+    price: "$899.99",
   },
 ];
 
@@ -146,6 +166,11 @@ document.getElementById("filter-jordans").addEventListener("click", () => {
 });
 
 document.getElementById("filter-others").addEventListener("click", () => {
+  filteredSneakers = sneakers;
+  renderSneakers(filteredSneakers);
+});
+
+document.getElementById("filter-all").addEventListener("click", () => {
   filteredSneakers = sneakers;
   renderSneakers(filteredSneakers);
 });
