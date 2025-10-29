@@ -166,7 +166,9 @@ document.getElementById("filter-jordans").addEventListener("click", () => {
 });
 
 document.getElementById("filter-others").addEventListener("click", () => {
-  filteredSneakers = sneakers;
+  filteredSneakers = sneakers.filter(
+    (sneaker) => !sneaker.name.toLowerCase().includes("jordan")
+  );
   renderSneakers(filteredSneakers);
 });
 
