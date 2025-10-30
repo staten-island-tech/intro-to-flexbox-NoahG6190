@@ -124,7 +124,7 @@ function rendercart() {
   cartContainer.innerHTML = "";
   cartItems.forEach((sneaker) => {
     cartContainer.insertAdjacentHTML(
-      "beforeend",
+      "afterbegin",
       `
       <div class="cart-item">
 <h3>${sneaker.name}</h3>

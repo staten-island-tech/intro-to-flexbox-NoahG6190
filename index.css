@@ -86,3 +86,15 @@ button {
   transition: background-color 0.3s;
   font-family: Lexend Tera, sans-serif;
 }
+button:hover {
+  background-color: #343a40;
+  cursor: pointer;
+}
+
+filter {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 1.5rem;
+  color: #495057;
+  font-family: Lexend Tera, sans-serif;
+}
